@@ -5,12 +5,12 @@ import Stats from "./components/Stats";
 
 const App = () => {
   return (
-    <>
+    <div className="app">
       <Logo />
       <Form />
       <PackingList />
       <Stats />
-    </>
+    </div>
   );
 };
 
