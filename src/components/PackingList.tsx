@@ -10,7 +10,7 @@ interface ItemProps {
 }
 
 // ITEM LIST
-const PackingList: React.FC = () => {
+const PackingList: React.FC = (): JSX.Element => {
   const initialItems: ItemProps["item"][] = [
     { id: 1, description: "Passports", quantity: 2, packed: false },
     { id: 2, description: "Socks", quantity: 12, packed: true },
@@ -20,7 +20,7 @@ const PackingList: React.FC = () => {
     <div className="list">
       <ul>
         {initialItems.map((item) => {
-          return <Item item={item} />;
+          return <Item item={item} key={item.id} />;
         })}
       </ul>
     </div>
@@ -28,7 +28,7 @@ const PackingList: React.FC = () => {
 };
 
 // ITEM
-const Item: React.FC<ItemProps> = ({ item }) => {
+const Item: React.FC<ItemProps> = ({ item }): JSX.Element => {
   return (
     <li>
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>

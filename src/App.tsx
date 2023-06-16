@@ -1,6 +1,7 @@
+import React from "react";
 import { Form, Logo, PackingList, Stats } from "./components";
 
-const App = () => {
+const App: React.FC = (): JSX.Element => {
   return (
     <div className="app">
       <Logo />
