@@ -1,25 +1,20 @@
 import React from "react";
 
-interface ItemProps {
-  item: {
-    id: number;
-    description: string;
-    quantity: number;
-    packed: boolean;
-  };
+// Item object interface
+interface Item {
+  id: number;
+  description: string;
+  quantity: number;
+  packed: boolean;
 }
 
 // ITEM LIST
-const PackingList: React.FC = (): JSX.Element => {
-  const initialItems: ItemProps["item"][] = [
-    { id: 1, description: "Passports", quantity: 2, packed: false },
-    { id: 2, description: "Socks", quantity: 12, packed: true },
-  ];
-
+const PackingList: React.FC<{ items: Item[] }> = ({ items }): JSX.Element => {
   return (
     <div className="list">
       <ul>
-        {initialItems.map((item) => {
+        {items.map((item: Item) => {
+          // passing item object to create individual Item
           return <Item item={item} key={item.id} />;
         })}
       </ul>
@@ -28,7 +23,7 @@ const PackingList: React.FC = (): JSX.Element => {
 };
 
 // ITEM
-const Item: React.FC<ItemProps> = ({ item }): JSX.Element => {
+const Item: React.FC<{ item: any }> = ({ item }): JSX.Element => {
   return (
     <li>
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>

@@ -1,14 +1,26 @@
 import React, { FormEvent, useState } from "react";
 
-const Form: React.FC = (): JSX.Element => {
+// Item Object Interface
+interface Item {
+  id: number;
+  description: string;
+  quantity: number;
+  packed: boolean;
+}
+
+// Form Props, accepts setItems
+interface FormProps {
+  setItems: React.Dispatch<React.SetStateAction<Item[]>>;
+}
+
+const Form: React.FC<FormProps> = ({ setItems }): JSX.Element => {
   //   description ,quantity state
   const [description, setDescription] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(1);
-  const [items, setItems] = useState<Array<Object>>([]);
 
   // handleAddItems function
-  function handleAddItems(item: Object): void {
-    setItems((items) => [...items, item]);
+  function handleAddItems(item: Item): void {
+    setItems((items: Item[]) => [...items, item]);
   }
 
   //  handleSubmit function
