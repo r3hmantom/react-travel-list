@@ -4,6 +4,12 @@ const Form: React.FC = (): JSX.Element => {
   //   description ,quantity state
   const [description, setDescription] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(1);
+  const [items, setItems] = useState<Array<Object>>([]);
+
+  // handleAddItems function
+  function handleAddItems(item: Object): void {
+    setItems((items) => [...items, item]);
+  }
 
   //  handleSubmit function
   function handleSubmit(e: FormEvent<HTMLFormElement>): void {
@@ -18,6 +24,7 @@ const Form: React.FC = (): JSX.Element => {
       id: Math.random(),
       packed: false,
     };
+    handleAddItems(newItem);
     console.log(newItem);
 
     setDescription("");
