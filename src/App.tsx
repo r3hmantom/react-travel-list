@@ -17,12 +17,16 @@ const App: React.FC = (): JSX.Element => {
   function handleAddItems(item: Item): void {
     setItems((items: Item[]) => [...items, item]);
   }
+  // handleRemoveItems function
+  function handleRemoveItems(id: number): void {
+    setItems((items) => items.filter((item) => item.id !== id));
+  }
 
   return (
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <PackingList items={items} />
+      <PackingList items={items} onRemoveItems={handleRemoveItems} />
       <Stats />
     </div>
   );
