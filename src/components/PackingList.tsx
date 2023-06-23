@@ -45,7 +45,7 @@ const Item: React.FC<ItemProps> = ({ item, onRemoveItems }): JSX.Element => {
     onRemoveItems(item.id);
   }
 
-  // Removed Item Styling
+  // Completed Item Styling
   const itemStyle = {
     textDecoration: item.packed ? "line-through" : "none",
   };
