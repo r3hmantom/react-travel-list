@@ -8,11 +8,16 @@ interface Item {
   packed: boolean;
 }
 
-// ITEM LIST
-const PackingList: React.FC<{
+interface PackingListProps {
   items: Item[];
   onRemoveItems: (id: number) => void;
-}> = ({ items, onRemoveItems }): JSX.Element => {
+}
+
+// ITEM LIST
+const PackingList: React.FC<PackingListProps> = ({
+  items,
+  onRemoveItems,
+}): JSX.Element => {
   return (
     <div className="list">
       <ul>
@@ -28,16 +33,28 @@ const PackingList: React.FC<{
 };
 
 // ITEM
-const Item: React.FC<{ item: any; onRemoveItems: (id: number) => void }> = ({
-  item,
-  onRemoveItems,
-}): JSX.Element => {
+
+interface ItemProps {
+  item: Item;
+  onRemoveItems: (id: number) => void;
+}
+
+const Item: React.FC<ItemProps> = ({ item, onRemoveItems }): JSX.Element => {
+  // Remove click handler
+  function handleRemoveClick() {
+    onRemoveItems(item.id);
+  }
+
+  // Removed Item Styling
+  const itemStyle = {
+    textDecoration: item.packed ? "line-through" : "none",
+  };
   return (
     <li>
-      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+      <span style={itemStyle}>
         {item.quantity} {item.description}
       </span>
-      <button onClick={() => onRemoveItems(item.id)}>❌</button>
+      <button onClick={handleRemoveClick}>❌</button>
     </li>
   );
 };
