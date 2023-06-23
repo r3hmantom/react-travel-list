@@ -10,18 +10,13 @@ interface Item {
 
 // Form Props, accepts setItems
 interface FormProps {
-  setItems: React.Dispatch<React.SetStateAction<Item[]>>;
+  onAddItems: (item: Item) => void;
 }
 
-const Form: React.FC<FormProps> = ({ setItems }): JSX.Element => {
+const Form: React.FC<FormProps> = ({ onAddItems }): JSX.Element => {
   //   description ,quantity state
   const [description, setDescription] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(1);
-
-  // handleAddItems function
-  function handleAddItems(item: Item): void {
-    setItems((items: Item[]) => [...items, item]);
-  }
 
   //  handleSubmit function
   function handleSubmit(e: FormEvent<HTMLFormElement>): void {
@@ -36,7 +31,7 @@ const Form: React.FC<FormProps> = ({ setItems }): JSX.Element => {
       id: Math.random(),
       packed: false,
     };
-    handleAddItems(newItem);
+    onAddItems(newItem);
     console.log(newItem);
 
     setDescription("");
