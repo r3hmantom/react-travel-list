@@ -22,11 +22,29 @@ const App: React.FC = (): JSX.Element => {
     setItems((items) => items.filter((item) => item.id !== id));
   }
 
+  // handleCheck function
+  function handleCheck(id: number): void {
+    setItems((items) =>
+      items.map((item) =>
+        item.id == id ? { ...item, packed: !item.packed } : item
+      )
+    );
+
+    // original item array
+    // filter which one is clicked based on id
+    // if id true change packed to !packed
+    // else
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <PackingList items={items} onRemoveItems={handleRemoveItems} />
+      <PackingList
+        items={items}
+        onCheck={handleCheck}
+        onRemoveItems={handleRemoveItems}
+      />
       <Stats />
     </div>
   );

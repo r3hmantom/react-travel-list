@@ -11,12 +11,14 @@ interface Item {
 interface PackingListProps {
   items: Item[];
   onRemoveItems: (id: number) => void;
+  onCheck: (id: number) => void;
 }
 
 // ITEM LIST
 const PackingList: React.FC<PackingListProps> = ({
   items,
   onRemoveItems,
+  onCheck,
 }): JSX.Element => {
   return (
     <div className="list">
@@ -24,7 +26,12 @@ const PackingList: React.FC<PackingListProps> = ({
         {items.map((item: Item) => {
           // passing item object to create individual Item
           return (
-            <Item item={item} key={item.id} onRemoveItems={onRemoveItems} />
+            <Item
+              item={item}
+              key={item.id}
+              onCheck={onCheck}
+              onRemoveItems={onRemoveItems}
+            />
           );
         })}
       </ul>
@@ -37,12 +44,22 @@ const PackingList: React.FC<PackingListProps> = ({
 interface ItemProps {
   item: Item;
   onRemoveItems: (id: number) => void;
+  onCheck: (id: number) => void;
 }
 
-const Item: React.FC<ItemProps> = ({ item, onRemoveItems }): JSX.Element => {
+const Item: React.FC<ItemProps> = ({
+  item,
+  onRemoveItems,
+  onCheck,
+}): JSX.Element => {
   // Remove click handler
   function handleRemoveClick() {
     onRemoveItems(item.id);
+  }
+
+  // check handler
+  function handleCheck() {
+    onCheck(item.id);
   }
 
   // Completed Item Styling
@@ -51,6 +68,7 @@ const Item: React.FC<ItemProps> = ({ item, onRemoveItems }): JSX.Element => {
   };
   return (
     <li>
+      <input type="checkbox" checked={item.packed} onChange={handleCheck} />
       <span style={itemStyle}>
         {item.quantity} {item.description}
       </span>
