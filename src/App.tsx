@@ -13,6 +13,10 @@ const App: React.FC = (): JSX.Element => {
   // Item[] = array of item objects
   const [items, setItems] = useState<Item[]>([]);
 
+  // Stats
+  const totalItems = items.length;
+  const packedItems = items.filter((item) => item.packed == true).length;
+
   // handleAddItems function
   function handleAddItems(item: Item): void {
     setItems((items: Item[]) => [...items, item]);
@@ -45,7 +49,7 @@ const App: React.FC = (): JSX.Element => {
         onCheck={handleCheck}
         onRemoveItems={handleRemoveItems}
       />
-      <Stats />
+      <Stats totalItems={totalItems} packedItems={packedItems} />
     </div>
   );
 };

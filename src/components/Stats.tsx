@@ -1,9 +1,25 @@
 import React from "react";
 
-const Stats: React.FC = (): JSX.Element => {
+interface StatsProps {
+  totalItems: Number;
+  packedItems: Number;
+}
+
+const Stats: React.FC<StatsProps> = ({
+  totalItems,
+  packedItems,
+}): JSX.Element => {
+  const percentage = Math.round(
+    ((packedItems as number) / (totalItems as number)) * 100
+  );
+
   return (
     <footer className="stats">
-      <em>🎒 You have x items on your list, and you already packed x (x%)</em>
+      <em>
+        {percentage === 100
+          ? "You got everything! Ready to go ✈️"
+          : ` 💼 You have ${totalItems} items on your list, and you already packed ${packedItems} (${percentage}%)`}
+      </em>
     </footer>
   );
 };
