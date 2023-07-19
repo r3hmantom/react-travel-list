@@ -40,6 +40,14 @@ const App: React.FC = (): JSX.Element => {
     // else
   }
 
+  function handleClearItems() {
+    if (items.length == 0) return;
+    const confirmation = window.confirm(
+      "Are you sure you want to delete all items"
+    );
+    if (confirmation) setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -48,6 +56,7 @@ const App: React.FC = (): JSX.Element => {
         items={items}
         onCheck={handleCheck}
         onRemoveItems={handleRemoveItems}
+        onClearItems={handleClearItems}
       />
       <Stats totalItems={totalItems} packedItems={packedItems} />
     </div>
