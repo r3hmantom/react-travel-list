@@ -57,7 +57,7 @@ const PackingList: React.FC<PackingListProps> = ({
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
         </select>
-        <button onClick={() => onClearItems()}>Cleart List</button>
+        <button onClick={() => onClearItems()}>Clear List</button>
       </div>
     </div>
   );
