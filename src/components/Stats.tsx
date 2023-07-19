@@ -9,6 +9,16 @@ const Stats: React.FC<StatsProps> = ({
   totalItems,
   packedItems,
 }): JSX.Element => {
+  //  Returning if there are no items in list
+  if (!totalItems) {
+    return (
+      <p className="stats">
+        <em>Start adding some items to your packing list 🚀</em>
+      </p>
+    );
+  }
+
+  // calculating percentage of items packed/unpacked
   const percentage = Math.round(
     ((packedItems as number) / (totalItems as number)) * 100
   );
