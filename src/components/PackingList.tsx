@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Item object interface
 interface Item {
@@ -20,10 +20,23 @@ const PackingList: React.FC<PackingListProps> = ({
   onRemoveItems,
   onCheck,
 }): JSX.Element => {
+  const [sortBy, setSortBy] = useState<string>("input");
+
+  let sortedItems;
+  if (sortBy === "description")
+    sortedItems = items
+      .slice()
+      .sort((a, b) => a.description.localeCompare(b.description));
+  if (sortBy === "input") sortedItems = items;
+  if (sortBy === "packed")
+    sortedItems = items
+      .slice()
+      .sort((a, b) => Number(a.packed) - Number(b.packed));
+
   return (
     <div className="list">
       <ul>
-        {items.map((item: Item) => {
+        {sortedItems?.map((item: Item) => {
           // passing item object to create individual Item
           return (
             <Item
@@ -35,6 +48,14 @@ const PackingList: React.FC<PackingListProps> = ({
           );
         })}
       </ul>
+
+      <div className="actions">
+        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+          <option value="input">Sort by input order</option>
+          <option value="description">Sort by description</option>
+          <option value="packed">Sort by packed status</option>
+        </select>
+      </div>
     </div>
   );
 };
