@@ -8,10 +8,132 @@ interface Item {
   quantity: number;
   packed: boolean;
 }
+const bro = [
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+  {
+    id: 5,
+    description: "asd",
+    quantity: 1,
+    packed: false,
+  },
+];
 
 const App: React.FC = (): JSX.Element => {
   // Item[] = array of item objects
-  const [items, setItems] = useState<Item[]>([]);
+  const [items, setItems] = useState<Item[]>(bro);
 
   // Stats
   const totalItems = items.length;

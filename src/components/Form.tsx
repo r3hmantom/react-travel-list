@@ -39,26 +39,30 @@ const Form: React.FC<FormProps> = ({ onAddItems }): JSX.Element => {
   }
 
   return (
-    <form className="add-form" onSubmit={handleSubmit}>
-      <h3>What do you need for your 😍 trip?</h3>
-      <select
-        value={quantity}
-        onChange={(e) => setQuantity(Number(e.target.value))}
-      >
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
-          <option value={num} key={num}>
-            {num}
-          </option>
-        ))}
-      </select>
-      <input
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        type="text"
-        placeholder="Item..."
-      />
-      <button type="submit">Add</button>
-    </form>
+    <>
+      <form className="add-form" onSubmit={handleSubmit}>
+        <h3>What do you need for your 😍 trip?</h3>
+        <div className="select-wrapper">
+          <select
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}
+          >
+            {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+              <option value={num} key={num}>
+                {num}
+              </option>
+            ))}
+          </select>
+          <input
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            type="text"
+            placeholder="Item..."
+          />
+          <button type="submit">Add</button>
+        </div>
+      </form>
+    </>
   );
 };
 
