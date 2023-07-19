@@ -8,132 +8,132 @@ interface Item {
   quantity: number;
   packed: boolean;
 }
-const bro = [
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-  {
-    id: 5,
-    description: "asd",
-    quantity: 1,
-    packed: false,
-  },
-];
+// const test = [
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+//   {
+//     id: 5,
+//     description: "asd",
+//     quantity: 1,
+//     packed: false,
+//   },
+// ];
 
 const App: React.FC = (): JSX.Element => {
   // Item[] = array of item objects
-  const [items, setItems] = useState<Item[]>(bro);
+  const [items, setItems] = useState<Item[]>([]);
 
   // Stats
   const totalItems = items.length;
