@@ -3,7 +3,12 @@
 
 The Travel List App is a simple web application built using React and TypeScript that allows users to create lists of items they want to pack in their bags for travel. It provides an intuitive interface to add, remove, sort and manage items in the packing list, helping users organize their travel preparations efficiently.
 
-Live Demo: [Travel List App Demo](https://r3-react-travel-list.netlify.app/)
+
+## Live Demo
+
+Check out the live demo of Travel List App: [Travel List App Demo](https://r3-react-travel-list.netlify.app/)
+
+
 
 ## Features
 
@@ -61,4 +66,7 @@ Contributions to the Travel List App are welcome! If you find any issues or have
 
 
 ## Happy traveling!
- If you have any questions or need further assistance, feel free to contact me at r3hmantom@gmail.com . Enjoy using the Travel List App for your travel adventures!
+ If you have any questions or need further assistance, feel free to contact me at r3hmantom@gmail.com .
+ 
+ 
+ Enjoy using the Travel List App for your travel adventures!
